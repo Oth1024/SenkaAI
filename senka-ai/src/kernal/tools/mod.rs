@@ -1,1 +1,1 @@
-mod config_manager;
+mod config;
