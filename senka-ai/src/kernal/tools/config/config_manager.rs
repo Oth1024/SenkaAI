@@ -1,3 +1,6 @@
+use crate::kernal::tools::config::config_trait::config::IConfig;
+use crate::kernal::tools::config::config_trait::config_register::IConfigRegister;
+
 pub struct ConfigManager
 {
 
@@ -5,7 +8,7 @@ pub struct ConfigManager
 
 impl ConfigManager
 {
-    pub fn regist_config()
+    pub fn regist_config(config_register: impl IConfigRegister)
     {
 
     }
