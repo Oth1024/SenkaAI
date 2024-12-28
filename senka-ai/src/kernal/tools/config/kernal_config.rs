@@ -1,10 +1,10 @@
-use crate::kernal::tools::config::config_trait::config::IConfig;
-use crate::kernal::tools::config::config_trait::config_register::IConfigRegister;
+use crate::kernal::tools::config::config_traits::config_trait::IConfig;
+use crate::kernal::tools::config::config_traits::config_register_trait::IConfigRegister;
 use crate::kernal::tools::config::enums::Platform;
 pub struct KernalConfig
 {
-    default_work_directory: String,
-    config_file_default_path: String,
+    default_work_directory: &'static str,
+    config_file_default_path: &'static str,
     platform: Platform,
 }
 
@@ -37,8 +37,8 @@ impl IConfigRegister for KernalConfigRegister
         {
             KernalConfig
             {
-                default_work_directory: String::from("../../"),
-                config_file_default_path: String::from("../Configs/"),
+                default_work_directory: "../../",
+                config_file_default_path: "../Configs/",
                 platform: Platform::Linux,
             }
         }
@@ -46,8 +46,8 @@ impl IConfigRegister for KernalConfigRegister
         {
             KernalConfig
             {
-                default_work_directory: String::from("..\\..\\"),
-                config_file_default_path: String::from("../Configs/"),
+                default_work_directory: "..\\..\\",
+                config_file_default_path: "../Configs/",
                 platform: Platform::Windows,
             }
         }
@@ -56,22 +56,22 @@ impl IConfigRegister for KernalConfigRegister
             // not support
             KernalConfig
             {
-                default_work_directory: String::from(""),
-                config_file_default_path: String:: from(""),
+                default_work_directory: "",
+                config_file_default_path: "",
                 platform: Platform::NotSupport,
             }
         }
     }
 
-    fn get_config_name(self) -> String 
+    fn get_config_name(self) -> &'static str 
     {
-        String::from("KernalConfig")
+        "KernalConfig"
     }
 
-    fn get_config_default_path(self) -> String 
+    fn get_config_default_path(self) -> &'static str 
     {
         // not implement
-        String::from("")
+        ""
     }
 
     fn set_config_default_path(self) 

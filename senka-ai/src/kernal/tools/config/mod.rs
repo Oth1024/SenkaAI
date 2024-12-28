@@ -1,5 +1,5 @@
-pub mod config_trait;
-mod config_output_type;
-mod config_manager;
-mod kernal_config;
-mod enums;
+pub mod config_traits;
+pub mod config_manager;
+pub mod config_output_type;
+pub mod kernal_config;
+pub mod enums;

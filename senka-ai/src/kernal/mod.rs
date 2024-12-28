@@ -1,3 +1,4 @@
 pub mod tools;
-mod senka_mind;
-mod server;
+pub mod consts;
+pub mod senka_mind;
+pub mod server;
